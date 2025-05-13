@@ -1,0 +1,41 @@
+<div class="register-container">
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <h2>Register</h2>
+    <div class="input-group">
+      <label for="username">Username</label>
+      <input id="username" type="text" formControlName="username" placeholder="Username">
+    </div>
+    <div class="input-group">
+      <label for="firstName">First Name</label>
+      <input id="firstName" type="text" formControlName="firstName" placeholder="First Name">
+    </div>
+    <div class="input-group">
+      <label for="lastName">Last Name</label>
+      <input id="lastName" type="text" formControlName="lastName" placeholder="Last Name">
+    </div>
+    <div class="input-group">
+      <label for="email">Email</label>
+      <input id="email" type="email" formControlName="email" placeholder="Email">
+    </div>
+    <div class="input-group">
+      <label for="address">Address</label>
+      <input id="address" type="text" formControlName="address" placeholder="Address">
+    </div>
+    <div class="input-group">
+      <label for="age">Age</label>
+      <input id="age" type="number" formControlName="age" placeholder="Age">
+    </div>
+    <div class="input-group">
+      <label for="phoneNumber">Phone Number</label>
+      <input id="phoneNumber" type="text" formControlName="phoneNumber" placeholder="Phone Number">
+    </div>
+    <div class="input-group">
+      <label for="password">Password</label>
+      <input id="password" type="password" formControlName="password" placeholder="Password">
+    </div>
+    <div class="button-container">
+      <button type="submit" [disabled]="registerForm.invalid">Register</button>
+      <button type="button" class="login-button" (click)="redirectToLogin()">Back to Login</button>
+    </div>
+  </form>
+</div>

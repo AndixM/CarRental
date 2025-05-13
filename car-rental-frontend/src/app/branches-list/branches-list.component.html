@@ -1,0 +1,53 @@
+<app-menu></app-menu>
+
+<div class="container">
+  <h2>Branches</h2>
+  <table>
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Car List</th>
+      <th>Rental</th>
+      <th>EDIT</th>
+      <th>DELETE</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let branch of branches; let i = index">
+      <td>{{ branch.id }}</td>
+      <td>{{ branch.name }}</td>
+      <td>{{ branch.address }}</td>
+      <td>
+        <table>
+          <thead>
+          <tr>
+            <th>Brand</th>
+            <th>Model</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let car of branch.carList">
+            <td>{{ car.brand }}</td>
+            <td>{{ car.model }}</td>
+          </tr>
+          </tbody>
+        </table>
+      </td>
+      <td>{{ branch.rental?.name }}</td>
+      <td>
+        <button (click)="editBranch(branch.id)" class="edit-btn">
+          <i class="fa-solid fa-pen-to-square"></i>
+        </button>
+      </td>
+      <td>
+        <button (click)="deleteBranch(branch.id, i)" class="delete-btn">
+          <i class="fas fa-ban"></i>
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

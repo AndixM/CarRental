@@ -1,0 +1,33 @@
+<app-menu></app-menu>
+
+<div class="container">
+  <h2>Add Branch</h2>
+  <div class="add-new-branch-container">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div class="input-group">
+        <label for="name">Name</label>
+        <input id="name" type="text" formControlName="name" placeholder="Name">
+      </div>
+      <div class="input-group">
+        <label for="address">Address</label>
+        <input id="address" type="text" formControlName="address" placeholder="Address">
+      </div>
+      <div class="input-group">
+        <label for="carList">Car</label>
+        <select id="carList" formControlName="carList" multiple>
+          <option *ngFor="let car of getCars()" [value]="car.id">{{ car.brand + " - " + car.model }}</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label for="rentalId">Rental</label>
+        <select id="rentalId" formControlName="rentalId">
+          <option *ngFor="let rental of getRentals()" [value]="rental.id">{{ rental.name }}</option>
+        </select>
+      </div>
+      <div class="button-container">
+        <button type="submit" [disabled]="registerForm.invalid">Save</button>
+        <button type="button" class="login-button" (click)="redirectToBranches()">Back to Branches</button>
+      </div>
+    </form>
+  </div>
+</div>

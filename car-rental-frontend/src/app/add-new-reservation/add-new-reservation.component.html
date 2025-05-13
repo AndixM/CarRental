@@ -1,0 +1,49 @@
+<app-menu></app-menu>
+
+<div class="container">
+  <h2>Add New Car</h2>
+  <div class="add-new-reservation-container">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div class="input-group">
+        <label for="dateOfBooking">Date of booking</label>
+        <input id="dateOfBooking" type="date" formControlName="dateOfBooking" placeholder="dateOfBooking">
+      </div>
+      <div class="input-group">
+        <label for="dateFrom">From date</label>
+        <input id="dateFrom" type="date" formControlName="dateFrom" placeholder="dateFrom">
+      </div>
+      <div class="input-group">
+        <label for="dateTo">To Date</label>
+        <input id="dateTo" type="date" formControlName="dateTo" placeholder="dateTo">
+      </div>
+      <div class="input-group">
+        <label for="returnDepartment">Branch</label>
+        <select id="returnDepartment" formControlName="returnDepartment">
+          <option *ngFor="let branch of getBranches()" [value]="branch.name">{{ branch.name }}</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label for="amount">Amount</label>
+        <input id="amount" type="number" formControlName="amount" placeholder="amount">
+      </div>
+      <div class="input-group">
+        <label for="carId">Car</label>
+        <select id="carId" formControlName="carId">
+          <option *ngFor="let car of getCars()" [value]="car.id">{{ car.brand + " - " + car.model }}</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label for="userIdSelect">User</label>
+        <select id="userIdSelect" formControlName="userIdSelect">
+          <option *ngFor="let user of getUsers()" [value]="user.id">{{ user.username }} </option>
+        </select>
+      </div>
+
+      <div class="button-container">
+        <button type="submit" [disabled]="registerForm.invalid">Save</button>
+        <button type="button" class="login-button" (click)="redirectToReservations()">Back to Reservations</button>
+      </div>
+    </form>
+  </div>
+</div>

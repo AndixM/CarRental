@@ -1,0 +1,48 @@
+.sidebar {
+  width: 250px;
+  background: rgba(44, 62, 80, 0.9);
+  color: white;
+  position: fixed;
+  height: 100vh;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  border-radius: 0 10px 10px 0;
+}
+
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: white;
+  display: block;
+}
+
+.sidebar ul li:hover {
+  background: #1a252f;
+  border-radius: 5px;
+}
+
+.submenu {
+  display: none;
+  padding-left: 15px;
+}
+
+.sidebar ul li:hover .submenu {
+  display: block;
+}

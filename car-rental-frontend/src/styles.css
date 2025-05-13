@@ -1,0 +1,25 @@
+.delete-btn {
+  background-color: transparent;
+  border: none;
+  color: red;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.delete-btn:hover {
+  color: darkred;
+}
+
+.edit-btn {
+  background-color: transparent;
+  border: none;
+  color: green;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.delete-btn:hover {
+  color: darkgreen;
+}

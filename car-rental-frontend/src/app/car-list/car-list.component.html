@@ -1,0 +1,37 @@
+<app-menu></app-menu>
+
+<div class="container">
+  <h2>Car List</h2>
+  <table>
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Brand</th>
+      <th>Model</th>
+      <th>Year</th>
+      <th>Price</th>
+      <th>EDIT</th>
+      <th>DELETE</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let car of cars;  let i = index">
+      <td>{{ car.id }}</td>
+      <td>{{ car.brand }}</td>
+      <td>{{ car.model }}</td>
+      <td>{{ car.year }}</td>
+      <td>{{ car.amount }} RON</td>
+      <td>
+        <button (click)="editCar(car.id)" class="edit-btn">
+          <i class="fa-solid fa-pen-to-square"></i>
+        </button>
+      </td>
+      <td>
+        <button (click)="deleteCar(car.id, i)" class="delete-btn">
+          <i class="fas fa-ban"></i>
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

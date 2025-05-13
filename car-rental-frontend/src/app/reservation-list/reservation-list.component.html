@@ -1,0 +1,43 @@
+<app-menu></app-menu>
+
+<div class="container">
+  <h2>Reservation List</h2>
+  <table>
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Date</th>
+      <th>Reservation Name</th>
+      <th>Car</th>
+      <th>Date From</th>
+      <th>Date To</th>
+      <th>Return Department</th>
+      <th>Amount</th>
+      <th>EDIT</th>
+      <th>DELETE</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let reservation of reservations">
+      <td>{{ reservation.id }}</td>
+      <td>{{ reservation.date | date: 'yyyy-MM-dd' }}</td>
+      <td>{{ reservation.username }}</td>
+      <td>{{ reservation.car.brand }} - {{ reservation.car.model }}</td>
+      <td>{{ reservation.dateFrom | date: 'yyyy-MM-dd' }}</td>
+      <td>{{ reservation.dateTo | date: 'yyyy-MM-dd' }}</td>
+      <td>{{ reservation.returnDepartment }}</td>
+      <td>{{ reservation.amount }} RON</td>
+      <td>
+        <button (click)="editReservation(reservation.id)" class="edit-btn">
+          <i class="fa-solid fa-pen-to-square"></i>
+        </button>
+      </td>
+      <td>
+        <button (click)="deleteReservation(reservation.id)" class="delete-btn">
+          <i class="fas fa-ban"></i>
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

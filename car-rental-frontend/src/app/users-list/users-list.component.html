@@ -1,0 +1,37 @@
+<app-menu></app-menu>
+
+<div class="container">
+  <h2>Users</h2>
+  <table>
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Address</th>
+      <th>Age</th>
+      <th>Phone Number</th>
+      <th>Roles</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.id }}</td>
+      <td>{{ user.firstName }}</td>
+      <td>{{ user.lastName }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.address }}</td>
+      <td>{{ user.age }}</td>
+      <td>{{ user.phoneNumber }}</td>
+      <td>{{ user.roles?.join(', ') }}</td>
+      <td>
+        <button (click)="deleteUser(user.id)" class="delete-btn">
+          <i class="fas fa-ban"></i>
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
